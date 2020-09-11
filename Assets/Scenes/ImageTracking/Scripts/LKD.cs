@@ -4,10 +4,16 @@ using UnityEngine.EventSystems;
 
 public class LKD : MonoBehaviour, IEventSystemHandler
 {
+    public GameObject otherPrefab;
     public void OpenURL(string url)
     {
         Application.OpenURL(url);
         
+    }
+
+    private void Start()
+    {
+        Instantiate(otherPrefab, transform.parent);
     }
 
     public void EnvoyerSignal(string button)
