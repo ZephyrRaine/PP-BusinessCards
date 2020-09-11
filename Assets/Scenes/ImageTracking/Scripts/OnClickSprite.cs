@@ -7,7 +7,7 @@ public class OnClickSprite : MonoBehaviour
 {
     public UnityEvent onClickEvent;
     // Start is called before the first frame update
-    private void onMouseDown(){
+    private void OnMouseDown(){
         onClickEvent?.Invoke();
         Debug.Log("OKok");
     }
