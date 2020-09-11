@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
+using UnityEngine.EventSystems;
 
-public class LKD : MonoBehaviour
+public class LKD : MonoBehaviour, IEventSystemHandler
 {
     public void OpenURL(string url)
     {
@@ -13,10 +14,10 @@ public class LKD : MonoBehaviour
     {
         if (button == "calendar")
         {
-            
+            UnityMessageManager.Instance.SendMessageToFlutter("calendar");
         }else if (button=="mic")
         {
-            
+            UnityMessageManager.Instance.SendMessageToFlutter("mic");
         }  
     }
 }
