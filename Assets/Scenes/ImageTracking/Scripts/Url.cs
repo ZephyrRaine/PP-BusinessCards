@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Url : MonoBehaviour, IEventSystemHandler
 {
-    public GameObject otherPrefab;
+    public FollowMainPrefab otherPrefab;
     public void OpenURL(string url)
     {
         Application.OpenURL(url);
@@ -13,8 +13,10 @@ public class Url : MonoBehaviour, IEventSystemHandler
 
     private void Start()
     {
-        Instantiate(otherPrefab, transform.parent);
+        var instance = Instantiate(otherPrefab, transform.parent);
+        instance.toFollow = this.transform;
     }
+
 
     
 }
