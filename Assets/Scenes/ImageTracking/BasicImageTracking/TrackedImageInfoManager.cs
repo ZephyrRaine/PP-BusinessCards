@@ -84,9 +84,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 planeGo.SetActive(true);
 
                 // The image extents is only valid when the image is being tracked
-                
                 trackedImage.transform.localScale = new Vector3(trackedImage.size.x, 1f, trackedImage.size.y);
-                //canvas.transform.localScale = new Vector3(trackedImage.size.x, 1f, trackedImage.size.y);
 
                 // Set the texture
                 var material = planeGo.GetComponentInChildren<MeshRenderer>().material;
@@ -103,7 +101,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
             foreach (var trackedImage in eventArgs.added)
             {
                 // Give the initial image a reasonable default scale
-                
                 trackedImage.transform.localScale = new Vector3(0.01f, 1f, 0.01f);
 
                 UpdateInfo(trackedImage);
